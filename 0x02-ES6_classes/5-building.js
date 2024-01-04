@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 export default class Building {
   constructor(sqft) {
     if (this.constructor !== Building && this.evacuationWarningMessage === undefined) {
