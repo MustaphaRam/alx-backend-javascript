@@ -4,11 +4,14 @@ export default function cleanSet(set, startString) {
   }
   const filteredValues = [];
 
-  for (const value of set) {
-    if (value.startsWith(startString)) {
-      filteredValues.push(value.slice(startString.length));
+  for (const value of set.values()) {
+    if (typeof value === 'string' && value.startsWith(startString)) {
+      const valueSubStr = value.substring(startString.length);
+
+      if (valueSubStr && valueSubStr !== value) {
+        filteredValues.push(valueSubStr);
+      }
     }
   }
-
   return filteredValues.join('-');
 }
