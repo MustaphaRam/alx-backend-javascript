@@ -1,5 +1,5 @@
 export default function getListStudents(students) {
-  if (!Array.isArray(students)) {
+  if (!students instanceof Array) {
     return [];
   }
 
